@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Homework_16</title>
+
+  </head>
+  <body>
+    <script type="text/javascript">
+
+    var human = {
+      name:'Andrii',
+      age : 30,
+      sex : 'M',
+      height : 186,
+      weight : 74,
+    };
+
+    var student={
+      occupation:'Student',
+      scholarship: 40,
+      watchShow:function () {
+        this.weight++;
+        this.scholarship--;
+      }
+    };
+
+    var worker={
+      occupation:'Worker',
+      salary: 40,
+      work:function () {
+        this.weight--;
+        this.salary++;
+      }
+    };
+
+    student.__proto__ = human;
+    worker.__proto__ = human;
+
+
+    for (var i=0;i<5;i++){
+      worker.work();
+      student.watchShow();
+
+    };
+
+    console.log('worker', worker.name, worker.occupation);
+    console.log('student', student.name,student.occupation );
+
+    console.log('worker after work', worker.weight, worker.salary);
+    console.log('student after wacthing show', student.weight, student.scholarship);
+
+    console.log(worker);
+    console.log(student);
+
+    </script>
+  </body>
+</html>
